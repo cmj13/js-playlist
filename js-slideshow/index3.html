@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+*{margin:0;padding:0;box-sizing: border-box;}
+.slideWrap{width:800px;height:400px;margin:100px auto;position: relative;}
+.slideWrap .wrap{width:100%;height: 100%;}
+.slideWrap .wrap .picNum{color: deeppink;font-size: 18px;position: absolute;top: 30px;left: 30px;}
+.slideWrap .wrap img{width: 100%;height: 100%;}
+.slideWrap .wrap .text{width:100%;color: deeppink;font-size: 20px;position: absolute;bottom: 20px;text-align: center;}
+.slideWrap .prev, .next{cursor: pointer;position: absolute;top: 50%;width: auto;margin-top: -22px;padding: 16px;color: white;border-radius: 0 3px 3px 0;font-weight: bold;font-size: 18px;transition: 0.6s ease;}
+.slideWrap .next{ right: 0;border-radius: 3px 0 0 3px;}
+.prev:hover, .next:hover {background-color: rgba(0,0,0,0.8);}
+.dot{width: 100%;position: absolute;bottom: 20px;display: inline-block;text-align: center;}
+.dot li{display: inline-block;width: 13px;height: 13px;border-radius: 50%;background-color: white;margin-right: 20px;transition: background-color 0.6s ease;}
+.dot .active,li:hover{background-color: deeppink;}
+.fade { -webkit-animation-name: fade;-webkit-animation-duration: 1.5s; animation-name: fade;animation-duration: 1.5s;}
+@-webkit-keyframes fade {from {opacity: .4}  to {opacity: 1}}
+@keyframes fade { from {opacity: .4} to {opacity: 1}}
+</style>
+</head>
+<body>
+<div class="slideWrap">
+<div class="wrap fade">
+	<div class="picNum"> 欢迎进入第一幅图</div>
+	<img src="https://c.runoob.com/wp-content/uploads/2017/01/img_mountains_wide.jpg" alt="正在加载中...." />
+</div>
+<div class="wrap fade">
+	<div class="picNum"> 欢迎进入第二幅图</div>
+	<img src="https://c.runoob.com/wp-content/uploads/2017/01/img_fjords_wide.jpg" alt="正在加载中...." />
+</div>
+<div class="wrap fade">
+	<div class="picNum"> 欢迎进入第三幅图</div>
+	<img src="https://c.runoob.com/wp-content/uploads/2017/01/img_nature_wide.jpg" alt="正在加载中...." />
+</div>
+<a class="prev" οnclick="plusSlides(-1)"><</a>
+<a class="next" οnclick="plusSlides(1)">></a>
+<ul class="dot">
+	<li οnclick="currentPage(1)"></li>
+	<li οnclick="currentPage(2)"></li>
+	<li οnclick="currentPage(3)"></li>
+</ul>
+</div>
+<script type="text/javascript">
+//幻灯片效果
+// var index = 1;
+// slide(index);
+// function plusSlides(n) {slide(index += n);}
+// function currentPage(n){lide(index = n);}
+// function slide(n){
+// var i;
+// var pic = document.getElementsByClassName("wrap");
+// var dot = document.getElementsByTagName("li")
+// if( index > pic.length){ index=1}
+// if (n < 1) {index = pic.length}
+// for (i = 0; i < pic.length; i++) {pic[i].style.display = "none";}
+// for (i = 0; i < dot.length; i++) { dot[i].className = dot[i].className.replace(" active", "");}
+// pic[index-1].style.display = "block"; 
+// dot[index-1].className += " active";			
+// }
+//自动播放，代码如下
+var index = 0;
+slide();
+function slide(){
+	var pic = document.getElementsByClassName("wrap");//获取每组图片
+var i;
+for( i=0; i < pic.length; i++){  //循环遍历，每组图片隐藏
+	pic[i].style.display="none";
+}
+index++;
+if( index > pic.length){ index=1} //判断index 显示图片
+pic[index-1].style.display="block";
+	setTimeout(slide,2000)
+}
+</script>
+</body>
+</html>

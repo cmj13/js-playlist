@@ -1,0 +1,84 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	list-style: none; /*去除列表元素的黑点*/
+	text-decoration: none;/*用于设置文本排版（下划线、顶划线、删除线或者闪烁）*/
+}
+body{
+	background: url(bg.jpg);
+	background-size: cover;
+	background-size: center;
+	background-repeat: no-repeat;
+}
+/*将元素居中*/
+.middle{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform:translate(-50%,-50%);
+}
+.menu{
+	width: 300px;
+	border-radius: 8px;
+	/*overflow 定义当一个元素的内容太大而无法适应 块级格式化上下文 时候该做什么。*/
+	overflow: hidden;
+}
+.item{ 
+	border-top: 1px solid #3498db;
+	overflow: hidden;
+}
+
+.btn{
+	display: block;/*将元素显示为块元素*/
+	padding: 16px 20px;
+	background: #2980b9;
+	color: white;
+	position: relative;
+}
+.btn:before{
+	content: "";
+	position: absolute;
+	width: 14px;
+	height: 14px;
+	background: #2980b9;
+	left: 20px;
+	bottom: -7px;
+	transform: rotate(45deg);
+/*	transform属性 允许你旋转，缩放，倾斜或平移给定元素。这是通过修改CSS视觉格式化模型的坐标空间来实现的。
+*/}
+.btn i{
+	margin-right: 20px;
+}
+.smenu{
+	background: #333;
+	overflow: hidden;
+	transition: max-height 0.3s;/*;过渡效果*/
+	max-height: 0;
+
+}
+.smenu a{
+	display: block;
+	padding: 16px 26px;
+	color: white;
+	font-size: 14px;
+	margin:4px 0;
+	position: relative;
+}
+.smenu a:before{
+    content: "";
+	position: absolute;
+	width: 6px;
+	height: 100%;
+	background: #2980b9;
+	left:0px;
+	top: 0px;
+	transition: 0.3s;
+	opacity: 0;
+}
+.smenu a:hover:before{
+	opacity: 1;
+}
+.item:target .smenu{
+max-height: 10em;
+}

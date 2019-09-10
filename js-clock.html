@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js clock</title>
+	<meta charset="utf-8">
+	<script>
+		function startime(){
+			let today = new Date();
+			let year = today.getFullYear();
+			let month = today.getMonth()+1;
+			let date = today.getDate();
+			let hour = today.getHours();
+			let minutes = today.getMinutes();
+			let second = today.getSeconds();
+			month = checkTime(month);
+			hour = checkTime(hour);
+			minutes = checkTime(minutes);
+			second = checkTime(second);
+			document.getElementById("day").innerHTML=year+"年"+month+"月"+date+"日&nbsp"+hour+":"+minutes+":"+second;
+			// t=setTimeout(function(){startime()},500);
+			t=setTimeout("startime()",500);//定时刷新
+		}
+		function checkTime(i){
+			if (i<10) {
+				return "0"+i
+			}else{
+				return i;
+			}
+		}
+	</script>
+</head>
+<body onload="startime()">
+	<p id="day"></p>
+</body>
+</html>

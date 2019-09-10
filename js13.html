@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js 调用参数的函数</title>
+	<script>
+		function myFunction(name1,name2){
+			alert("你好"+name2+name1+"！");
+		}
+		function myFunction1(txt){
+			alert(txt);
+		}
+	</script>
+</head>
+<body>
+<p>点击按钮，显示调用参数的函数</p>
+<button type="button" onclick="myFunction('mj','c')">点击显示</button>
+<button type="button" onclick="myFunction1('good morning')">在早上</button>
+<button type="button" onclick="myFunction1('good evening')">在晚上</button>
+</body>
+</html>

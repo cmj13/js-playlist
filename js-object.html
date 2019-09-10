@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js obeject</title>
+	<meta charset="utf-8">
+	<!-- <script>
+		person={
+			firstname:"John",
+			ages:50
+		}
+		document.write(person.firstname+" is "+person.ages+" old years!");
+	</script> -->
+	<script>
+		function person(firstname,lastname,age,eyecolor){
+			this.firstname=firstname;
+			this.lastname=lastname;
+			this.age=age;
+			this.eyecolor=eyecolor;
+		}
+		myFather=new person("John","Doe",50,"blue");
+		document.write(myFather.firstname+"is "+myFather.age +" years old.")
+	</script>
+</head>
+<body>
+
+</body>
+</html>

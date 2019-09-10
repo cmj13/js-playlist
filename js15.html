@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js for循环</title>
+	<meta charset="utf-8">
+	
+</head>
+<body>
+	<button type="button" onclick="myFunction()">点击此处(for)</button>
+	<button type="button" onclick="myFunction1()">点击此处观看标题从大变小</button>
+	<button type="button" onclick="myFunction2()">点击此处观看标题从小变大</button><br>
+	<button type="button" onclick="myFunction3()">点击此处(while)</button>
+	<button type="button" onclick="myFunction4()">点击此处(do while)</button>
+	<button type="button" onclick="myFunction5()">点击此处(break)</button>
+	<button type="button" onclick="myFunction6()">点击此处(continue)</button>
+	<button type="button" onclick="myFunction7()">点击此处(for in)</button>
+	<p id="demo"></p>
+	<script>
+		function myFunction(){
+			let x="",i;
+			for(i=0;i<5;i++){
+				x=x+"这是第"+i+"个数字。<br>";	
+			}
+		document.getElementById("demo").innerHTML=x; 	
+		}
+
+		function myFunction1(){
+			let x="",i;
+			for(i=1;i<=6;i++){
+				x=x+"<h"+i+">"+"这是head"+i+"标题。";
+			}
+			document.getElementById("demo").innerHTML=x;
+		}
+		function myFunction2(){
+			let x="",i;
+			for(i=6;i>=1;i--){
+				x=x+"<h"+i+">"+"这是head"+i+"标题。";
+			}
+			document.getElementById("demo").innerHTML=x;
+		}
+		function myFunction3(){
+			let x ="",i=0;
+			while(i<5){
+				x=x+"这是第"+i+"个数字。<br>";
+				i++;	
+			}
+			document.getElementById("demo").innerHTML=x;
+		}
+		function myFunction4(){
+			let x="",i=0;
+			do{
+				x=x+"这是第"+i+"个数字。<br>";
+				i++;
+			}
+			while(i<5)
+			document.getElementById("demo").innerHTML=x;
+		}
+		function myFunction5(){
+			let x="",i;
+			for(i=0;i<5;i++){
+				if(i==3){
+					break;
+				}
+				x=x+"这是第"+i+"个数字。<br>";	
+			}
+		document.getElementById("demo").innerHTML=x; 	
+		}
+		function myFunction6(){
+			let x="",i;
+			for(i=0;i<5;i++){
+				if(i==3){
+					continue;
+				}
+				x=x+"这是第"+i+"个数字。<br>";	
+			}
+		document.getElementById("demo").innerHTML=x; 	
+		}
+		function myFunction7(){
+			let x;
+			let txt="";
+			let person={fname:"Bill",lname:"Gates",ages:65};
+			for(x in person){
+				txt = txt+person[x];
+			}
+			document.getElementById("demo").innerHTML=txt;
+		}
+	</script> 
+</body>
+</html>

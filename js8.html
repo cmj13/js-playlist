@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js if语句</title>
+</head>
+<body>
+<p>如果时间早于 20:00，会获得问候 "Good day"。</p>
+<button onclick="myFunction()">点击这里</button>
+<p id="demo"></p>
+<p id="demo2"></p>
+<script>
+	function myFunction(){
+		let x ="";
+		let time=new Date().getHours();
+		if (time <20) {
+			x="Good day!";
+		}
+		else{
+			x="Good evening!";
+		}
+		document.getElementById("demo").innerHTML=x;
+	}
+	let r = Math.random();
+	let a =document.getElementById("demo2")
+		if (r>0.5){
+	a.innerHTML="<a href='http://www.runoob.com'>访问菜鸟教程</a>";
+}
+else{
+	a.innerHTML="<a href='http://wwf.org'>Visit WWF</a>";
+}
+</script>
+</body>
+</html>

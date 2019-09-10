@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>js 提示框</title>
+		<meta charset="utf-8">
+		<script>
+			function myFunction(){
+				let x ="";
+				let person = prompt("请输入您的名字","halir");
+				//prompt(text,defaultText)
+				//text	可选。要在对话框中显示的纯文本（而不是 HTML 格式的文本）。
+				//defaultText	可选。默认的输入文本。
+				if (person != null && person != "") {
+					x="你好"+person+"!";
+				}
+				document.getElementById("demo").innerHTML=x;
+			}
+		</script>
+	</head>
+	<body>
+		<button type="button" onclick="myFunction()">点击此处</button>
+		<p id="demo"></p>
+	</body>
+</html>
